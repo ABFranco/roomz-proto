@@ -1,0 +1,194 @@
+syntax = "proto3";
+
+package roomzpb.v1;
+
+option go_package = ".;proto";
+
+message CreateAccountRequest {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+    string password = 4;
+}
+message CreateAccountResponse {
+    bool success = 1;
+    uint32 user_id  = 2;
+    string error_message = 3;
+}
+
+message EditAccountEmailRequest {
+    string old_email = 1;
+    string new_email = 2;
+}
+message EditAccountEmailResponse {
+}
+
+message EditAccountPasswordRequest {
+    string email = 1;
+    string old_password = 2;
+    string new_password = 3;
+}
+message EditAccountPasswordResponse {
+}
+
+message SignInRequest {
+    string email = 1;
+    string password = 2;
+}
+message SignInResponse {
+    bool success = 1;
+    uint32 user_id  = 2;
+    string first_name = 3;
+    string last_name = 4;
+    string error_message = 5;
+}
+
+message CreateRoomRequest {
+    uint32 user_id = 1;
+    string user_name = 2;
+    string password = 3;
+    bool is_strict = 4;
+}
+message CreateRoomResponse {
+    bool success = 1;
+    uint32 room_id  = 2;
+    string error_message = 3;
+    bool is_strict = 4; // TODO: update FE so we can delete this
+    string token = 5;
+}
+
+
+message CloseRoomRequest {
+    uint32 room_id = 1;
+}
+message CloseRoomResponse {
+    bool success = 1;
+    string error_message = 3;
+}
+
+
+message AwaitRoomClosureRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+    string token = 3;
+}
+message HostClosedRoom {
+}
+
+
+message JoinRoomRequest {
+    uint32 room_id = 1;
+    string room_password = 2;
+    uint32 user_id = 3;
+    string user_name = 4;
+    bool is_guest = 5;
+}
+
+message StrictJoinRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+    string user_name = 3;
+}
+
+message JoinRoomResponse {
+    bool success = 1;
+    uint32 room_id = 2;
+    uint32 user_id = 3;
+    string status = 4;
+    bool is_guest = 5;
+    string token = 6;
+    repeated ChatMessage chat_history = 7;
+    string error_message = 8;
+}
+
+
+message LeaveRoomRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+}
+message LeaveRoomResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+
+message EnterChatRoomRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+    string token = 3;
+}
+
+message ChatMessage {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+    string user_name = 3;
+    string message = 4;
+    string timestamp = 5;
+}
+
+message SendChatMessageResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+
+message GetJoinRequestsRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+}
+message GetJoinRequestsResponse {
+    bool success = 1;
+    uint32 room_id = 2;
+    repeated StrictJoinRequest join_requests = 3;
+    string error_message = 4;
+}
+
+
+message HandleJoinRequestRequest {
+    uint32 room_id = 1;
+    uint32 user_id_to_handle = 2;
+    string decision = 3;
+}
+message HandleJoinRequestResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+
+message CancelJoinRequestRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+}
+message CancelJoinRequestResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+
+message UpdateSessionIdRequest {
+    uint32 room_id = 1;
+    uint32 user_id = 2;
+}
+message UpdateSessionIdResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+
+service RoomzApiService {
+    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse);
+    rpc SignIn(SignInRequest) returns (SignInResponse);
+    rpc CreateRoom(CreateRoomRequest) returns (CreateRoomResponse);
+    rpc CloseRoom(CloseRoomRequest) returns (CloseRoomResponse);
+    rpc AwaitRoomClosure(AwaitRoomClosureRequest) returns (stream HostClosedRoom);
+    rpc JoinRoom(JoinRoomRequest) returns (stream JoinRoomResponse);
+    rpc LeaveRoom(LeaveRoomRequest) returns (LeaveRoomResponse);
+    rpc EnterChatRoom(EnterChatRoomRequest) returns (stream ChatMessage);
+    rpc SendChatMessage(ChatMessage) returns (SendChatMessageResponse);
+    rpc GetJoinRequests(GetJoinRequestsRequest) returns (GetJoinRequestsResponse);
+    rpc HandleJoinRequest(HandleJoinRequestRequest) returns (HandleJoinRequestResponse);
+    rpc CancelJoinRequest(CancelJoinRequestRequest) returns (CancelJoinRequestResponse);
+    rpc UpdateSessionId(UpdateSessionIdRequest) returns (UpdateSessionIdResponse);
+    rpc EditAccountEmail(EditAccountEmailRequest) returns (EditAccountEmailResponse);
+    rpc EditAccountPassword(EditAccountPasswordRequest) returns (EditAccountPasswordResponse);
+}
