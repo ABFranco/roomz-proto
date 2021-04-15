@@ -1,4 +1,4 @@
-# roomz-gRPC-proto
+# roomz-proto
 A repo dedicated to hosting shared protocol buffer files between our various services.
 
 ## Preliminary Setup
