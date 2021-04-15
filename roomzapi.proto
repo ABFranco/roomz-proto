@@ -21,6 +21,9 @@ message EditAccountEmailRequest {
     string new_email = 2;
 }
 message EditAccountEmailResponse {
+    bool success = 1;
+    string updated_email = 2;
+    string error_messsage = 3;
 }
 
 message EditAccountPasswordRequest {
@@ -29,6 +32,9 @@ message EditAccountPasswordRequest {
     string new_password = 3;
 }
 message EditAccountPasswordResponse {
+    bool success = 1;
+    string updated_password = 2;
+    string error_message = 3;
 }
 
 message SignInRequest {
