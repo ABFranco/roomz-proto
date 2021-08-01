@@ -1096,5 +1096,325 @@ proto.roomzpb.v1.RoomzApiServicePromiseClient.prototype.updateSessionId =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.roomzpb.v1.EditAccountEmailRequest,
+ *   !proto.roomzpb.v1.EditAccountEmailResponse>}
+ */
+const methodDescriptor_RoomzApiService_EditAccountEmail = new grpc.web.MethodDescriptor(
+  '/roomzpb.v1.RoomzApiService/EditAccountEmail',
+  grpc.web.MethodType.UNARY,
+  proto.roomzpb.v1.EditAccountEmailRequest,
+  proto.roomzpb.v1.EditAccountEmailResponse,
+  /**
+   * @param {!proto.roomzpb.v1.EditAccountEmailRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.EditAccountEmailResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.roomzpb.v1.EditAccountEmailRequest,
+ *   !proto.roomzpb.v1.EditAccountEmailResponse>}
+ */
+const methodInfo_RoomzApiService_EditAccountEmail = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.roomzpb.v1.EditAccountEmailResponse,
+  /**
+   * @param {!proto.roomzpb.v1.EditAccountEmailRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.EditAccountEmailResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.roomzpb.v1.EditAccountEmailRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.roomzpb.v1.EditAccountEmailResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.roomzpb.v1.EditAccountEmailResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.roomzpb.v1.RoomzApiServiceClient.prototype.editAccountEmail =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/EditAccountEmail',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_EditAccountEmail,
+      callback);
+};
+
+
+/**
+ * @param {!proto.roomzpb.v1.EditAccountEmailRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.roomzpb.v1.EditAccountEmailResponse>}
+ *     Promise that resolves to the response
+ */
+proto.roomzpb.v1.RoomzApiServicePromiseClient.prototype.editAccountEmail =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/EditAccountEmail',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_EditAccountEmail);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.roomzpb.v1.EditAccountPasswordRequest,
+ *   !proto.roomzpb.v1.EditAccountPasswordResponse>}
+ */
+const methodDescriptor_RoomzApiService_EditAccountPassword = new grpc.web.MethodDescriptor(
+  '/roomzpb.v1.RoomzApiService/EditAccountPassword',
+  grpc.web.MethodType.UNARY,
+  proto.roomzpb.v1.EditAccountPasswordRequest,
+  proto.roomzpb.v1.EditAccountPasswordResponse,
+  /**
+   * @param {!proto.roomzpb.v1.EditAccountPasswordRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.EditAccountPasswordResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.roomzpb.v1.EditAccountPasswordRequest,
+ *   !proto.roomzpb.v1.EditAccountPasswordResponse>}
+ */
+const methodInfo_RoomzApiService_EditAccountPassword = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.roomzpb.v1.EditAccountPasswordResponse,
+  /**
+   * @param {!proto.roomzpb.v1.EditAccountPasswordRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.EditAccountPasswordResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.roomzpb.v1.EditAccountPasswordRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.roomzpb.v1.EditAccountPasswordResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.roomzpb.v1.EditAccountPasswordResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.roomzpb.v1.RoomzApiServiceClient.prototype.editAccountPassword =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/EditAccountPassword',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_EditAccountPassword,
+      callback);
+};
+
+
+/**
+ * @param {!proto.roomzpb.v1.EditAccountPasswordRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.roomzpb.v1.EditAccountPasswordResponse>}
+ *     Promise that resolves to the response
+ */
+proto.roomzpb.v1.RoomzApiServicePromiseClient.prototype.editAccountPassword =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/EditAccountPassword',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_EditAccountPassword);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.roomzpb.v1.EditAvatarRequest,
+ *   !proto.roomzpb.v1.EditAvatarResponse>}
+ */
+const methodDescriptor_RoomzApiService_EditAvatar = new grpc.web.MethodDescriptor(
+  '/roomzpb.v1.RoomzApiService/EditAvatar',
+  grpc.web.MethodType.UNARY,
+  proto.roomzpb.v1.EditAvatarRequest,
+  proto.roomzpb.v1.EditAvatarResponse,
+  /**
+   * @param {!proto.roomzpb.v1.EditAvatarRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.EditAvatarResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.roomzpb.v1.EditAvatarRequest,
+ *   !proto.roomzpb.v1.EditAvatarResponse>}
+ */
+const methodInfo_RoomzApiService_EditAvatar = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.roomzpb.v1.EditAvatarResponse,
+  /**
+   * @param {!proto.roomzpb.v1.EditAvatarRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.EditAvatarResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.roomzpb.v1.EditAvatarRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.roomzpb.v1.EditAvatarResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.roomzpb.v1.EditAvatarResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.roomzpb.v1.RoomzApiServiceClient.prototype.editAvatar =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/EditAvatar',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_EditAvatar,
+      callback);
+};
+
+
+/**
+ * @param {!proto.roomzpb.v1.EditAvatarRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.roomzpb.v1.EditAvatarResponse>}
+ *     Promise that resolves to the response
+ */
+proto.roomzpb.v1.RoomzApiServicePromiseClient.prototype.editAvatar =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/EditAvatar',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_EditAvatar);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.roomzpb.v1.DeleteAvatarRequest,
+ *   !proto.roomzpb.v1.DeleteAvatarResponse>}
+ */
+const methodDescriptor_RoomzApiService_DeleteAvatar = new grpc.web.MethodDescriptor(
+  '/roomzpb.v1.RoomzApiService/DeleteAvatar',
+  grpc.web.MethodType.UNARY,
+  proto.roomzpb.v1.DeleteAvatarRequest,
+  proto.roomzpb.v1.DeleteAvatarResponse,
+  /**
+   * @param {!proto.roomzpb.v1.DeleteAvatarRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.DeleteAvatarResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.roomzpb.v1.DeleteAvatarRequest,
+ *   !proto.roomzpb.v1.DeleteAvatarResponse>}
+ */
+const methodInfo_RoomzApiService_DeleteAvatar = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.roomzpb.v1.DeleteAvatarResponse,
+  /**
+   * @param {!proto.roomzpb.v1.DeleteAvatarRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.roomzpb.v1.DeleteAvatarResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.roomzpb.v1.DeleteAvatarRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.roomzpb.v1.DeleteAvatarResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.roomzpb.v1.DeleteAvatarResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.roomzpb.v1.RoomzApiServiceClient.prototype.deleteAvatar =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/DeleteAvatar',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_DeleteAvatar,
+      callback);
+};
+
+
+/**
+ * @param {!proto.roomzpb.v1.DeleteAvatarRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.roomzpb.v1.DeleteAvatarResponse>}
+ *     Promise that resolves to the response
+ */
+proto.roomzpb.v1.RoomzApiServicePromiseClient.prototype.deleteAvatar =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/roomzpb.v1.RoomzApiService/DeleteAvatar',
+      request,
+      metadata || {},
+      methodDescriptor_RoomzApiService_DeleteAvatar);
+};
+
+
 module.exports = proto.roomzpb.v1;
 
